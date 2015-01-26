@@ -1,5 +1,6 @@
 package api.application.request;
 
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -8,7 +9,9 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 @XmlJavaTypeAdapter(Gender.XmlTypeAdapter.class)
 public enum Gender {
 
+	@XmlElement
     MALE("male"),
+    @XmlElement
     FEMALE("female");
 
     public static class XmlTypeAdapter extends XmlAdapter<String, Gender> {
